@@ -37,6 +37,10 @@ if (isNaN(numMessages) || numMessages <= 0) {
     }
 }
 
+// Exporting functions for testing
+
+module.exports = { getRandomElement, generateMessage };
+
 // Output the random message
 
 console.log(generateMessage());
