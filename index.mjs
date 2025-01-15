@@ -2,7 +2,8 @@
 
 // Importing prompt-sync for user interaction
 
-const prompt = require("prompt-sync")({sigint: true});
+import promptSync from 'prompt-sync';
+const prompt = promptSync({ sigint: true });
 
 // Data pools for random message generation
 
@@ -12,10 +13,10 @@ const outcomes = ["that will change your life.", "with unexpected rewards.", "wh
 
 // Function to generate random messages
 
-const getRandomElement = (arr) => 
+export const getRandomElement = (arr) => 
     arr[Math.floor(Math.random() * arr.length)];
 
-const generateMessage = () => {
+export const generateMessage = () => {
     if (categories.length === 0 || actions.length === 0 || outcomes.length === 0) {
         throw new Error("One or more arrays are empty, cannot generate message.");
     }
@@ -42,7 +43,7 @@ if (isNaN(numMessages) || numMessages <= 0) {
 
 // Exporting functions for testing
 
-module.exports = { getRandomElement, generateMessage };
+export default { getRandomElement, generateMessage };
 
 // Output the random message
 
