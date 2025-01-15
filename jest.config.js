@@ -1,3 +1,3 @@
 export default {
-    testMatch: [/Users/shinaoguntoye/Projects/MixedMessages/__tests__/index.test.mjs],
+    testMatch: ['/Users/shinaoguntoye/Projects/MixedMessages/__tests__/index.test.mjs'],
 };
