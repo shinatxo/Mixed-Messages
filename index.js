@@ -16,6 +16,9 @@ const getRandomElement = (arr) =>
     arr[Math.floor(Math.random() * arr.length)];
 
 const generateMessage = () => {
+    if (categories.length === 0 || actions.length === 0 || outcomes.length === 0) {
+        throw new Error("One or more arrays are empty, cannot generate message.");
+    }
     const category = getRandomElement(categories);
     const action = getRandomElement(actions);
     const outcome = getRandomElement(outcomes);

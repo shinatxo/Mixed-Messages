@@ -1,6 +1,6 @@
-const { getRandomElement, generateMessage } = require("./index");
+import { getRandomElement, generateMessage } from "./index";
 
-describe ('Mixed Messages Test', () => {
+describe('Mixed Messages Test', () => {
     const testArray = ["item1", "item2", "item3"];
 
     test('getRandomElement should return a random element from the array', () => {
@@ -10,7 +10,7 @@ describe ('Mixed Messages Test', () => {
 
     test('generateMessage should return a complete message', () => {
         const message = generateMessage();
-        expect (typeof message).toBe('string');
-        expect (message.length).toBeGreaterThan(0);
+        expect(typeof message).toBe('string');
+        expect(message.length).toBeGreaterThan(0);
     });
 });
