@@ -1,3 +1,3 @@
 export default {
-    transform: {},
+    testMatch: [/Users/shinaoguntoye/Projects/MixedMessages/__tests__/index.test.mjs],
 };
