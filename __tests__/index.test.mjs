@@ -1,4 +1,4 @@
-import { getRandomElement, generateMessage } from "./index";
+import { getRandomElement, generateMessage } from "../index.mjs";
 
 describe('Mixed Messages Test', () => {
     const testArray = ["item1", "item2", "item3"];
