@@ -28,6 +28,20 @@ document.getElementById('generate-message').addEventListener('click', () => {
     const messageDisplay = document.getElementById('message-display');
     messageDisplay.innerText = message;
     messageDisplay.className = 'generated-message';
+});
+
+document.getElementById('generate-messages').addEventListener('click', () => {
+    generateMessages();
+});
+
+document.getElementById('num-messages').addEventListener('keypress', (event) => {
+    if (event.key === 'Enter') {
+        generateMessages();
+    }
+});
+
+const generateMessages = () => {
+
     const numMessages = parseInt(document.getElementById('num-messages').value);
     const messagesContainer = document.getElementById('messages-container');
 
@@ -48,7 +62,7 @@ document.getElementById('generate-message').addEventListener('click', () => {
             console.log(`👉 ${message}`);
         }
     }
-});
+};
 
 // Exporting functions for testing
 
