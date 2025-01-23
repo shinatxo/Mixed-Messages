@@ -1,20 +1,17 @@
 // Mixed Messages Program
 
-// Importing prompt-sync for user interaction
-
-import promptSync from 'prompt-sync';
-const prompt = promptSync({ sigint: true });
-
 // Data pools for random message generation
 
 const categories = ["Today is a day to", "You will", "An opportunity will arise to"];
 const actions = ["discover a new path", "face new challenges", "find success", ];
 const outcomes = ["that will change your life.", "with unexpected rewards.", "which will bring joy and clarity."];
 
-// Function to generate random messages
+// Function to get a random element from an array
 
 export const getRandomElement = (arr) => 
     arr[Math.floor(Math.random() * arr.length)];
+
+// Function to generate a random message
 
 export const generateMessage = () => {
     if (categories.length === 0 || actions.length === 0 || outcomes.length === 0) {
@@ -25,6 +22,11 @@ export const generateMessage = () => {
     const outcome = getRandomElement(outcomes);
     return `${category} ${action} ${outcome}`;
 };
+
+document.getElementById('generate-message').addEventListener('click', () => {
+    const message = generateMessage();
+    document.getElementById('message-display').innerText = message;
+});
 
 // User interaction: choose how many messages to generate
 
