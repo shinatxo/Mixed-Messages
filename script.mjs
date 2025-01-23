@@ -28,10 +28,6 @@ document.getElementById('generate-message').addEventListener('click', () => {
     document.getElementById('message-display').innerText = message;
 });
 
-// User interaction: choose how many messages to generate
-
-const numMessages = parseInt(prompt("How many messages would you like to generate?"), 10);
-
 // Validate user input
 
 if (isNaN(numMessages) || numMessages <= 0) {
