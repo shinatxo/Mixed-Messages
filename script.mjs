@@ -25,19 +25,30 @@ export const generateMessage = () => {
 
 document.getElementById('generate-message').addEventListener('click', () => {
     const message = generateMessage();
-    document.getElementById('message-display').innerText = message;
-});
+    const messageDisplay = document.getElementById('message-display');
+    messageDisplay.innerText = message;
+    messageDisplay.className = 'generated-message';
+    const numMessages = parseInt(document.getElementById('num-messages').value);
+    const messagesContainer = document.getElementById('messages-container');
 
-// Validate user input
+    // Clear previous messages
+    messagesContainer.innerHTML = '';
 
-if (isNaN(numMessages) || numMessages <= 0) {
-    console.log("Please enter a valid positive number.");
-} else {
-    console.log("\n✨ Your Random Messages ✨");
-    for (let i = 0; i < numMessages; i++) {
-        console.log(`👉 ${generateMessage()}`);
+    // Validate user input
+
+    if (isNaN(numMessages) || numMessages <= 0) {
+        console.log("Please enter a valid positive number.");
+    } else {
+        console.log("\n✨ Your Random Messages ✨");
+        for (let i = 0; i < numMessages; i++) {
+            const message = generateMessage();
+            const messageElement = document.createElement('p');
+            messageElement.innerText = `👉 ${message}`;
+            messagesContainer.appendChild(messageElement);
+            console.log(`👉 ${message}`);
+        }
     }
-}
+});
 
 // Exporting functions for testing
 

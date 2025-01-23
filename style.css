@@ -97,3 +97,17 @@ input:focus {
     font-weight: bold;
     margin-top: 10px;
 }
+
+/* Style for generated messages */
+.generated-message {
+    color: red;
+    font-style: italic;
+    font-family: 'Courier New', Courier, monospace; /* Distinct typewriter font */
+    font-size: 16px;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #ffe6e6; /* Light red background */
+    border: 1px solid #f5c2c2;
+    border-radius: 5px;
+    text-align: center;
+}
